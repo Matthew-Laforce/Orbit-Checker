@@ -30,12 +30,14 @@ index = 0
 while index < len(orbit_differences):
     compare_count = 0
     temp_lambda = 0
+    # When duplicate values are found, increment 'temp_lambda'
     while compare_count < len(orbit_differences):
         if orbit_differences[compare_count] == orbit_differences[index]:
             temp_lambda += 1
         compare_count += 1
+    # If 'temp_lambda' ever exceeds lambda, increase 'max_matches'
     if temp_lambda > max_matches:
         max_matches = temp_lambda
     index += 1
-    
+
 print(f"Lambda = {max_matches}")
